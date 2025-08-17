@@ -41,7 +41,7 @@ function renderGames(games) {
                                 <span class="text-xs font-bold px-2 py-1 rounded-md ${statusColor}">${game.status}</span>
                             </div>
                             <p class="text-sm leading-relaxed flex-grow">${game.description}</p>
-                            <a href="${game.gameUrl}" target="_blank" rel="noopener noreferrer" class="mt-4 self-start inline-block bg-light-primary text-light-bg dark:bg-dark-primary dark:text-dark-bg font-pixel text-xs px-4 py-2 rounded-md pixel-shadow-sm hover:scale-105 transition-transform">
+                            <a href="${game.gameUrl}" rel="noopener noreferrer" class="mt-4 self-start inline-block bg-light-primary text-light-bg dark:bg-dark-primary dark:text-dark-bg font-pixel text-xs px-4 py-2 rounded-md pixel-shadow-sm hover:scale-105 transition-transform">
                                 Learn More
                             </a>
                         </div>
