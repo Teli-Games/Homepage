@@ -1,0 +1,19 @@
+.font-pixel { font-family: 'Press Start 2P', cursive; }
+.font-sans { font-family: 'Inter', sans-serif; }
+
+.pixel-shadow {
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+}
+.dark .pixel-shadow {
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.3);
+}
+.pixel-shadow-sm {
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+}
+.dark .pixel-shadow-sm {
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+}
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

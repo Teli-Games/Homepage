@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teli Games | Cozy & Quirky Indie Games</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css">
+
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            pixel: ['"Press Start 2P"', 'cursive'],
+                            sans: ['Inter', 'sans-serif'],
+                        },
+                        colors: {
+                            'light-bg': '#FFFBF5',
+                            'light-text': '#4C4C4C',
+                            'light-primary': '#7A9D54',
+                            'light-secondary': '#F6E1C3',
+                            'light-accent': '#8C6A5D',
+
+                            'dark-bg': '#2C3333',
+                            'dark-text': '#E7F6F2',
+                            'dark-primary': '#A5C9CA',
+                            'dark-secondary': '#395B64',
+                            'dark-accent': '#E7F6F2',
+                        },
+                        animation: {
+                            'float': 'float 3s ease-in-out infinite',
+                        },
+                        keyframes: {
+                            float: {
+                                '0%, 100%': { transform: 'translateY(0px)' },
+                                '50%': { transform: 'translateY(-10px)' },
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <script src="/js/theme.js" defer></script>
+        <script src="/js/data.js" defer></script>
+    </head>
+
+    <body class="font-sans bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text antialiased">
+
+    <header class="sticky top-0 z-50 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-sm border-b-4 border-light-secondary dark:border-dark-secondary">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-pixel text-lg md:text-xl text-light-primary dark:text-dark-primary">
+                Teli Games
+            </a>
+            <div class="flex items-center space-x-4">
+                <a href="#games" class="hidden md:block hover:text-light-primary dark:hover:text-dark-primary font-semibold">Games</a>
+                <a href="#about" class="hidden md:block hover:text-light-primary dark:hover:text-dark-primary font-semibold">About</a>
+                <button id="theme-toggle" class="p-2 rounded-full bg-light-secondary dark:bg-dark-secondary pixel-shadow-sm hover:scale-110 transition-transform">
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 text-light-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 text-dark-accent hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="py-20 md:py-32 text-center relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="absolute -top-10 -left-10 w-24 h-24 bg-light-primary/20 dark:bg-dark-primary/20 rounded-full animate-float"></div>
+                <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-light-secondary dark:bg-dark-secondary rounded-full animate-float [animation-delay:-1.5s]"></div>
+
+                <h1 class="font-pixel text-3xl md:text-5xl mb-4 text-light-primary dark:text-dark-primary">Teli Games</h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto">
+                    Probably making your next favorite game. Or at least, a game you'll tell your friends is "pretty neat."
+                </p>
+            </div>
+        </section>
+
+        <section id="games" class="py-20 bg-light-secondary/50 dark:bg-dark-secondary/50">
+            <div class="container mx-auto px-6">
+                <h2 class="font-pixel text-2xl md:text-3xl text-center mb-12">Our Masterpieces (in progress)</h2>
+                <div id="games-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="text-center p-4 col-span-full">
+                        <p class="text-lg">Fetching games from the ether...</p>
+                        <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-light-primary dark:border-dark-primary mx-auto mt-4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="font-pixel text-2xl md:text-3xl text-center mb-12">The Brains (and lack thereof)</h2>
+                <div class="bg-white dark:bg-dark-secondary rounded-lg p-8 md:p-12 border-4 border-light-text dark:border-dark-text pixel-shadow">
+                    <p class="text-lg mb-6">
+                        Founded by two friends who decided making games was slightly more fun than their day jobs. One of us is good at art, the other one *thinks* they're good at code. We'll let you decide which is which.
+                    </p>
+                    <p class="text-lg">
+                        Our philosophy is simple: create cozy, charming games that feel like a warm hug on a rainy day. Also, games with questionable physics engines because that's just funny. We're powered by coffee, questionable life choices, and the sheer belief that someone out there wants to play a game about a sentient turnip accountant.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light-secondary dark:bg-dark-secondary py-8">
+        <div class="container mx-auto px-6 text-center text-light-accent dark:text-dark-accent">
+            <p class="font-semibold mb-2">Follow our journey into madness!</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:scale-125 transition-transform" aria-label="Discord">
+                    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 4.36981C18.7915 3.72559 17.1858 3.28443 15.5292 3.00002C15.4239 3.22492 15.3303 3.48214 15.2543 3.7502C13.5977 3.41668 11.9084 3.41668 10.2635 3.7502C10.1875 3.48214 10.0939 3.22492 9.98864 3.00002C8.33202 3.28443 6.72637 3.72559 5.20089 4.36981C2.16598 8.03233 1.15582 11.5199 1.5173 14.9491C3.41742 16.5057 5.43825 17.4423 7.52052 17.9814C7.86884 17.4325 8.1722 16.8409 8.42338 16.2169C7.42933 15.8834 6.51699 15.3948 5.69639 14.7708C5.87053 14.653 6.033 14.5352 6.18381 14.4057C9.44391 16.4342 13.2599 16.4342 16.3278 14.4057C16.4786 14.5352 16.6411 14.653 16.8152 14.7708C15.9946 15.3948 15.0823 15.8834 14.0882 16.2169C14.3394 16.8409 14.6428 17.4325 14.9911 17.9814C17.0734 17.4423 19.0942 16.5057 20.9943 14.9491C21.4085 11.1158 20.2125 7.69672 20.317 4.36981ZM8.68359 12.6889C7.81708 12.6889 7.10313 11.9079 7.10313 10.9614C7.10313 10.0149 7.80542 9.23394 8.68359 9.23394C9.56176 9.23394 10.2757 10.0149 10.264 10.9614C10.264 11.9079 9.56176 12.6889 8.68359 12.6889ZM13.8282 12.6889C12.9617 12.6889 12.2478 11.9079 12.2478 10.9614C12.2478 10.0149 12.9499 9.23394 13.8282 9.23394C14.7063 9.23394 15.4203 10.0149 15.4086 10.9614C15.4086 11.9079 14.7063 12.6889 13.8282 12.6889Z"></path></svg>
+                </a>
+            </div>
+            <p class="text-sm">&copy; 2025 Teli Games. All rights reserved. (Probably).</p>
+        </div>
+    </footer>
+    </body>
+</html>
