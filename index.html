@@ -3,14 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Teli Games | Cozy & Quirky Indie Games</title>
+        <title>Teli Games | Cosy & Quirky Indie Games</title>
 
         <script src="https://cdn.tailwindcss.com"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/css/style.css">
 
         <script>
             tailwind.config = {
@@ -48,8 +47,11 @@
             }
         </script>
 
+        <link rel="stylesheet" href="/css/style.css">
+
         <script src="/js/theme.js" defer></script>
-        <script src="/js/data.js" defer></script>
+        <script src="/js/games.js" defer></script>
+        <script src="/js/launcher.js" defer></script>
     </head>
 
     <body class="font-sans bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text antialiased">
@@ -99,14 +101,24 @@
                     <h2 class="font-pixel text-2xl md:text-3xl text-center mb-12">The Brains (and lack thereof)</h2>
                     <div class="bg-white dark:bg-dark-secondary rounded-lg p-8 md:p-12 border-4 border-light-text dark:border-dark-text pixel-shadow">
                         <p class="text-lg mb-6">
-                            Founded by two friends who decided making games was slightly more fun than their day jobs. One of us is good at art, the other one *thinks* they're good at code. We'll let you decide which is which.
+                            Founded by two friends who decided making games was slightly more fun than their day jobs. One of us is good at art, the other one *thinks* they're good at code. We'll let you decide which is which...
                         </p>
                         <p class="text-lg">
-                            Our philosophy is simple: create cozy, charming games that feel like a warm hug on a rainy day. Also, games with questionable physics engines because that's just funny. We're powered by caffiene, questionable life choices, and the sheer belief that someone out there wants to play a game about a sentient turnip (if we ever make that).
+                            Our philosophy is simple: create cosy, charming games that feel like a warm hug on a rainy day. Also, games with questionable physics engines because that's just funny. We're powered by caffiene, questionable life choices, and the sheer belief that someone out there wants to play a game about a sentient turnip (if we ever make that).
                         </p>
                     </div>
                 </div>
             </section>
+
+            <section id="launcher" class="py-20 bg-light-secondary/50 dark:bg-dark-secondary/50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-pixel text-2xl md:text-3xl mb-8">Get our Launcher</h2>
+                <div id="launcher-container" class="min-h-[64px]">
+                    <div class="w-8 h-8 border-4 border-dashed rounded-full animate-spin border-light-primary dark:border-dark-primary mx-auto"></div>
+                    <p class="mt-2 text-sm">Checking for the latest version...</p>
+                </div>
+            </div>
+        </section>
         </main>
 
         <footer class="bg-light-secondary dark:bg-dark-secondary py-8">
