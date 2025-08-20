@@ -33,9 +33,8 @@ function renderLauncherButton(data) {
     else if (userPlatform.startsWith('linux')) platform = 'linux-x86_64';
     else platform = 'unknown';
 
-
     if (!data.platforms[platform]) {
-        launcherContainer.innerHTML = `<p class="text-red-500">Your platform (${[platform]}) is not supported by the launcher.</p>`;
+        launcherContainer.innerHTML = `<p class="text-red-500">We're sorry, your platform (${[platform]}) is not supported by our launcher. Keep an eye out for when we officialy launch!</p>`;
         return;
     }
 
