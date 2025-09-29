@@ -34,7 +34,7 @@ function renderLauncherButton(data) {
     else platform = 'unknown';
 
     if (!data.platforms[platform]) {
-        launcherContainer.innerHTML = `<p class="text-red-500">We're sorry, your platform (${[platform]}) is not supported by our launcher. Keep an eye out for when we officialy launch!</p>`;
+        launcherContainer.innerHTML = `<p class="text-red-500">We're sorry, your platform (${[platform]}) is not supported by our launcher. Keep an eye out for when we officially launch!</p>`;
         return;
     }
 
