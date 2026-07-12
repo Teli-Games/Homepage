@@ -52,7 +52,7 @@ function renderGames(games) {
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         const response = await fetchGames();
-        const games = response.items;
+        const games = response.items.reverse();
         renderGames(games);
     } catch (error) {
         console.error("Failed to fetch games:", error);
