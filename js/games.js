@@ -1,7 +1,7 @@
-const baseApiUrl = 'https://api.teli.games/games';
+const baseApiUrl = 'https://pb.teli.games/api/collections/games/records';
 
 function fetchGames() {
-    return fetch(`${baseApiUrl}/`)
+    return fetch(`${baseApiUrl}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -9,9 +9,7 @@ function fetchGames() {
             return response.json();
         })
         .then(data => {
-            if (!Array.isArray(data)) {
-                throw new Error('Invalid data format received');
-            }
+            if (!data.items) throw new Error('Data response not valid')
             return data;
         })
         .catch(error => {
@@ -41,7 +39,7 @@ function renderGames(games) {
                                 <span class="text-xs font-bold px-2 py-1 rounded-md ${statusColor}">${game.status}</span>
                             </div>
                             <p class="text-sm leading-relaxed flex-grow">${game.description}</p>
-                            <a href="${game.gameUrl}" rel="noopener noreferrer" class="mt-4 self-start inline-block bg-light-primary text-light-bg dark:bg-dark-primary dark:text-dark-bg font-pixel text-xs px-4 py-2 rounded-md pixel-shadow-sm hover:scale-105 transition-transform">
+                            <a href="${game.slug}" rel="noopener noreferrer" class="mt-4 self-start inline-block bg-light-primary text-light-bg dark:bg-dark-primary dark:text-dark-bg font-pixel text-xs px-4 py-2 rounded-md pixel-shadow-sm hover:scale-105 transition-transform">
                                 Learn More
                             </a>
                         </div>
@@ -53,7 +51,8 @@ function renderGames(games) {
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const games = await fetchGames();
+        const response = await fetchGames();
+        const games = response.items.reverse();
         renderGames(games);
     } catch (error) {
         console.error("Failed to fetch games:", error);
